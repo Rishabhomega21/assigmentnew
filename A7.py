@@ -14,7 +14,7 @@ glass_types = {
     6: "Tableware",
     7: "Headlamps"
 }
-st.title("🔮 Glass Type Predictor")
+st.title("Glass Type Predictor")
 st.markdown("Enter the chemical properties below to predict the type of glass.")
 
 RI = st.number_input("Refractive Index (RI)", value=1.52)
@@ -31,4 +31,4 @@ if st.button("Predict Glass Type"):
     user_input = np.array([[RI, Na, Mg, Al, Si, K, Ca, Ba, Fe]])
     user_scaled = scaler.transform(user_input)
     prediction = model.predict(user_scaled)[0]
-    st.success(f"🏷 Predicted Glass Type: **{glass_types.get(prediction, 'Unknown')}**")
+    st.success(f"Predicted Glass Type: **{glass_types.get(prediction, 'Unknown')}**")
